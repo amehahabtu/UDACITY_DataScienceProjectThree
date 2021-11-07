@@ -37,7 +37,7 @@ def get_filters():
       
     # Get user input for month (all, january, february, ... , june)
   
-    month = input('Please enter the month you would like to filter your data(ALL|January|February|March|April|May|June): ').lower().strip()
+    month = input('Please enter the month you would like to filter your data in '+city+' (ALL|January|February|March|April|May|June): ').lower().strip()
     while(month not in months) : 
         print('Sorry! The month you entered doesn\'t exist in our record.')
         mon_period = input('Please re-enter the valid month for the given city: ').lower().strip()
@@ -184,19 +184,21 @@ def user_stats(df):
         earliest_year_of_birth = int(df['Birth Year'].min())
         most_recent_year_of_birth = int(df['Birth Year'].max())
         most_common_year_of_birth = int(df['Birth Year'].mode()[0])
+        average_year_of_birth = int(df['Birth Year'].mean()) 
         print('Users\'Year of Birth\n')
         print(f'The Oldest: {earliest_year_of_birth}\nThe Youngest: {most_recent_year_of_birth}\nThe most common Year of Birth: {most_common_year_of_birth}')
+        print(f'The average Year of Birth: {average_year_of_birth}')
     except KeyError:
          print('The Birth Year data doesn\'t exist for the given city.')    
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*80)
 
-def display_five_raw_records(df): 
+def display_five_raw_data_records(df): 
     ans ='Y'
     i=0 
     n=5
     while ans=='Y'or ans=='y':      
-        ans= input("Would you like to see 5 lines of raw data for your search (Enter y or Y for Yes , n or N for No)? ").upper()  
+        ans= input("Would you like to see 5 rows of raw data for your search (Enter y or Y for Yes , n or N for No)? ").upper()  
         print(df.iloc[i:n])
         i += 5
         n += 5  
@@ -211,7 +213,7 @@ def main():
         station_stats(df)
         trip_duration_stats(df)
         user_stats(df)
-        display_five_raw_records(df)
+        display_five_raw_data_records(df)
 
         restart = input('\nWould you like to another search on US bikeshare?(Enter y or Y for yes , n or N for no): ')
         if restart.lower() != 'y':
