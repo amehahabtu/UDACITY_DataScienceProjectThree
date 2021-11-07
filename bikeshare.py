@@ -1,6 +1,6 @@
 '''
 Name : Ameha Habtu
-Description: This program reads csv files for 3 cities,interacts with users to filter by month &/day or both and get stats. The stats incudes trip time , trip duration, stations, users profile information.
+Description: This program reads csv data files for 3 citie ( Chicago , New York City and Washington),interacts with users to filter by month &/day or both and get stats. The stats incudes trip time , trip duration, stations, users profile information.
 Date : 9/26/2021
 
 '''
@@ -18,6 +18,7 @@ cities =['chicago','new york city','washington']
 months = ['all','january','february','march','april','may','june']
 days = ['all','monday','tuesday','wednesday','thursday','friday','saturday','sunday']
 
+# get_filters() get user input on city name , month name , and day of the week
 def get_filters():
     global city, month,day
     """
@@ -56,7 +57,7 @@ def get_filters():
     print(f'Your filtering Criteria is\nCity : {city.title()}\tMonth: {month.title()}\tDay: {day.title()}')
     return city, month, day
 
-
+# load_data() based on data_filter() it loads data for user consumption.
 def load_data(city, month, day):    
     """
     Loads data for the specified city and filters by month and day if applicable.
