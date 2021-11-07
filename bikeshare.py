@@ -9,6 +9,7 @@ import pandas as pd
 import numpy as np
 import datetime as dt
 
+# Bikeshare has data for only three cities. These are Chicago, New York City and Washington.
 CITY_DATA = { 'chicago': './chicago.csv',
               'new york city': './new_york_city.csv',
               'washington': './washington.csv' }
@@ -29,7 +30,7 @@ def get_filters():
     """
      # Get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs    
 
-    city = input('Enter the city\'s name that you would like to take a look (Chicago|New York City|Washington):  ').lower().strip()
+    city = input('Enter the city\'s name that you would like to take a look\n(Chicago|New York City|Washington):  ').lower().strip()
     while(city not in cities) : 
         print('Sorry! The city you entered doesn\'t exist in our record.')
         city_name = input('please re-enter valid city\'s name: ').lower().strip()
@@ -37,7 +38,7 @@ def get_filters():
       
     # Get user input for month (all, january, february, ... , june)
   
-    month = input('Please enter the month you would like to filter your data(ALL|January|February|March|April|May|June): ').lower().strip()
+    month = input('Please enter the month you would like to filter your data\n(ALL|January|February|March|April|May|June): ').lower().strip()
     while(month not in months) : 
         print('Sorry! The month you entered doesn\'t exist in our record.')
         mon_period = input('Please re-enter the valid month for the given city: ').lower().strip()
@@ -45,7 +46,7 @@ def get_filters():
 
     # Get user input for day of week (all, monday, tuesday, ... sunday)
 
-    day = input('Please enter day you would like to check you would like to filter your data(ALL|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday): ').lower().strip()
+    day = input('Please enter day you would like to check you would like to filter your data\n(ALL|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday): ').lower().strip()
     while (day not in days): 
         print('Oops! The day you entered doesn\'t exist in our record.')
         day_period = input('Please re-enter the valid day as appeared in the above: ').lower().strip()
