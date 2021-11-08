@@ -32,7 +32,7 @@ def get_filters():
     city = input('Enter the city\'s name that you would like to take a look (Chicago|New York City|Washington):  ').lower().strip()
     while(city not in cities) : 
         print('Sorry! The city you entered doesn\'t exist in our record.')
-        city_name = input('please re-enter valid city\'s name: ').lower().strip()
+        city_name = input('please re-enter valid city\'s name as appeared in the above: ').lower().strip()
         city=city_name
       
     # Get user input for month (all, january, february, ... , june)
@@ -40,7 +40,7 @@ def get_filters():
     month = input('Please enter the month you would like to filter your data in '+city+' (ALL|January|February|March|April|May|June): ').lower().strip()
     while(month not in months) : 
         print('Sorry! The month you entered doesn\'t exist in our record.')
-        mon_period = input('Please re-enter the valid month for the given city: ').lower().strip()
+        mon_period = input('Please re-enter the valid month choice for the given city as appeared in the above: ').lower().strip()
         month = mon_period
 
     # Get user input for day of week (all, monday, tuesday, ... sunday)
@@ -48,7 +48,7 @@ def get_filters():
     day = input('Please enter day you would like to check you would like to filter your data(ALL|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday): ').lower().strip()
     while (day not in days): 
         print('Oops! The day you entered doesn\'t exist in our record.')
-        day_period = input('Please re-enter the valid day as appeared in the above: ').lower().strip()
+        day_period = input('Please re-enter the valid day choice as appeared in the above: ').lower().strip()
         day = day_period    
 
     print('-'*80)
@@ -215,9 +215,9 @@ def main():
         user_stats(df)
         display_five_raw_data_records(df)
 
-        restart = input('\nWould you like to another search on US bikeshare?(Enter y or Y for yes , n or N for no): ')
+        restart = input('\nWould you like to do more search on US bikeshare?(Enter y or Y for yes , n or N for no): ')
         if restart.lower() != 'y':
             break
-    print('\nThank you for visiting the US Bikeshare Data Analystics Platform! You can give us your comment via usbikeshare@datanalytics.com')
+    print('\nThank you for visiting the US Bikeshare Data Analystics Platform! You can send us your comment or suggestios via usbikeshare@datanalytics.com')
 if __name__ == "__main__":
 	main()
