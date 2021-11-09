@@ -39,7 +39,11 @@ def get_filters():
       
     # Get user input for month (all, january, february, ... , june)
   
+<<<<<<< HEAD
     month = input('Please enter the month you would like to filter your data in '+city+'\n (ALL|January|February|March|April|May|June): ').lower().strip()
+=======
+    month = input('Please enter the month you would like to filter your data\n(ALL|January|February|March|April|May|June): ').lower().strip()
+>>>>>>> 86e4e4c (Input statment wrapped)
     while(month not in months) : 
         print('Sorry! The month you entered doesn\'t exist in our record.')
         mon_period = input('Please re-enter the valid month choice for the given city as appeared in the above: ').lower().strip()
